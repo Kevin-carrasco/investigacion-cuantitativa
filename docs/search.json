@@ -191,6 +191,17 @@
     ]
   },
   {
+    "objectID": "assignment/01-taller.html#taller",
+    "href": "assignment/01-taller.html#taller",
+    "title": "Taller 1. Niveles de medición y construcción de items",
+    "section": "Taller:",
+    "text": "Taller:\nA continuación, se les presentarán diversos conceptos. En grupos:\n\nEscojan tres de los conceptos enlistados al final del documento.\nFormulen tres preguntas diferentes que permitan medir cada concepto.\nEntre las tres preguntas formuladas se deben incorporar, al menos, dos niveles de medición distintos. Por ejemplo, de las tres preguntas formuladas, dos de ellas pueden tener un nivel de medición ordinal, y una de ellas un nivel de medición nominal.\nIncluir las alternativas de respuesta asociadas a cada una de las preguntas. En caso de ser numéricas, definir el rango de valores posibles. Por ejemplo: (- ∞, +∞), [0, +∞), ]0, n], etc.\nTambién pueden formular preguntas iguales con alternativas diferentes, siempre y cuando los niveles de medición de las formulaciones difieran.\nDefinan cuál de las tres formulaciones consideran que permite medir mejor cada concepto. Justifiquen la decisión en base a las limitaciones y potencialidades de cada una.\nSe les entregará una hoja para realizar el taller. En ella deben especificar el título Taller 1, el nombre de l_s integrantes del equipo, y sus respectivas respuestas. Tendrán hasta las 13:25 para entregarlo.",
+    "crumbs": [
+      "Talleres",
+      "01: Taller 1"
+    ]
+  },
+  {
     "objectID": "assignment/01-taller.html#conceptos",
     "href": "assignment/01-taller.html#conceptos",
     "title": "Taller 1. Niveles de medición y construcción de items",
@@ -206,7 +217,7 @@
     "href": "assignment/01-taller.html#ejemplo-de-trabajo",
     "title": "Taller 1. Niveles de medición y construcción de items",
     "section": "Ejemplo de trabajo",
-    "text": "Ejemplo de trabajo\n\n\n\n\n\n\nConceptos\nPreguntas\nAlternativas\nNivel de medición\nPotencialidades\nLimitaciones\nOpción escogida\n\n\n\n\nConcepto 1\nPregunta 1\na)\nNivel 1\n1, 2, …, n\n1, 2, …, n\nSi\n\n\nb)\n\n\nPregunta 2\n[0, +∞)\nNivel 2\nNo.\n\n\nPregunta 3\na)\nNivel 3\nNo\n\n\nb)\n\n\nc)\n\n\nConcepto 2\nPregunta 1\na)\nNivel 1\nNo.\n\n\nb)\n\n\nPregunta 2\n[0, +∞)\nNivel 2\nSi\n\n\nPregunta 3\na)\nNivel 3\nNo\n\n\nb)\n\n\nc)\n\n\nConcepto 3\nPregunta 1\na)\nNivel 1\nNo.\n\n\nb)\n\n\nPregunta 2\n[0, +∞)\nNivel 2\nNo\n\n\nPregunta 3\na)\nNivel 3\nSi\n\n\nb)\n\n\nc)",
+    "text": "Ejemplo de trabajo\n\n\n\n\n\n\nConceptos\nPreguntas\nAlternativas\nNivel de medición\nPotencialidades\nLimitaciones\nOpción escogida\n\n\n\n\nEdad\n¿Cuántos años tiene?\n[0, +∞)\nRazón\n1, 2, …, n\n1, 2, …, n\nSi\n\n\n\n\n¿En qué rango etario se encuentra?\n[14,25]\nIntervalar\nNo.\n\n\n[26,34]\nNo\n\n\n¿Con qué categoría se identifica?\nJóven\nOrdinal\n\n\nAdulto\n\n\nConcepto 2\nPregunta 1\na)\nNivel 1\nNo.\n\n\nb)\n\n\nPregunta 2\n[0, +∞)\nNivel 2\nSi\n\n\nPregunta 3\na)\nNivel 3\nNo\n\n\nb)\n\n\nc)\n\n\nConcepto 3\nPregunta 1\na)\nNivel 1\nNo.\n\n\nb)\n\n\nPregunta 2\n[0, +∞)\nNivel 2\nNo\n\n\nPregunta 3\na)\nNivel 3\nSi\n\n\nb)\n\n\nc)",
     "crumbs": [
       "Talleres",
       "01: Taller 1"
@@ -245,7 +256,7 @@
     "href": "index.html",
     "title": "\n            Estrategias de investigación cuantitativa\n        ",
     "section": "",
-    "text": "Estrategias de investigación cuantitativa\n        \n        \n            Sociología - Facultad de Ciencias Sociales de la Universidad de Chile\n        \n        \n            SOC01020-1 • Segundo semestre 2024Departamento de Sociología FACSOUniversidad de Chile\n        \n    \n    \n      \n        \n        \n        \n      \n    \n\n\n\n\n\nEquipo docente\nProfesor\n\n   Dr. Pablo Perez Ahumada\n   Departamento de Sociología N° 319\n   &lt;a href=“mailto:pabloperez@uchile.cl”&gt;pabloperez@uchile.cl\n\nApoyos docente\n\n   Daniela Olivares\n   &lt;a href=“mailto:danielaolivarescollio@gmail.com”&gt;danielaolivarescollio@gmail.com\n   Kevin Carrasco\n   &lt;a href=“mailto:kevin.carrasco@ug.uchile.cl”&gt;kevin.carrasco@ug.uchile.cl\n\n\n\nInformación del curso\n\n   Jueves\n   Agosto 29 - Diciembre 2024\n   14:30 a 16:00 y 16:15 a 17:45\n   Aulario C - Sala C06"
+    "text": "Estrategias de investigación cuantitativa\n        \n        \n            Sociología - Facultad de Ciencias Sociales de la Universidad de Chile\n        \n        \n            SOC01020-1 • Segundo semestre 2024Departamento de Sociología FACSOUniversidad de Chile\n        \n    \n    \n      \n        \n        \n        \n      \n    \n\n\n\n\n\nEquipo docente\nProfesor\n\n   Dr. Pablo Perez Ahumada\n   Departamento de Sociología N° 319\n pabloperez@uchile.cl\n\nApoyos docente\n\n   Daniela Olivares\n danielaolivarescollio@gmail.com\n   Kevin Carrasco\n kevin.carrasco@ug.uchile.cl\n\n\n\nInformación del curso\n\n   Jueves\n   Agosto 29 - Diciembre 2024\n   14:30 a 16:00 y 16:15 a 17:45\n   Aulario C - Sala C06"
   },
   {
     "objectID": "practicos/02-content.html",

@@ -33,16 +33,16 @@ withr::with_dir(here::here(), {
 
 - {{< fa user >}} &nbsp; [{{< var instructor.name >}}]({{< var instructor.url >}})
 - {{< fa university >}} &nbsp; {{< var instructor.office >}}
-- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var instructor.email >}}">{{< var instructor.email >}}</a>
+- {{< fa envelope >}} <a href="mailto:pabloperez@uchile.cl">pabloperez@uchile.cl</a>
 
 
 **Apoyos docente**
 
 
 - {{< fa user >}} &nbsp; Daniela Olivares
-- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other2.email >}}">{{< var other2.email >}}</a>
+- {{< fa envelope >}} <a href="mailto:danielaolivarescollio@gmail.com">danielaolivarescollio@gmail.com</a>
 - {{< fa user >}} &nbsp; Kevin Carrasco
-- {{< fa envelope >}} &nbsp; <a href="mailto:{{< var other.email >}}">{{< var other.email >}}</a>
+- {{< fa envelope >}} <a href="mailto:kevin.carrasco@ug.uchile.cl">kevin.carrasco@ug.uchile.cl</a>
 
 :::
 

@@ -1,11 +1,11 @@
 ---
 title: "Taller 1. Niveles de medición y construcción de items"
-date: "2023-08-24"
+date: "2024-09-05"
 lang: es
 website:
   comments:
     giscus:
-      repo: kevin-carrasco/investigacion-cuantitativa
+      repo: cursos-metodos-facso/investigacion-cuantitativa
 ---
 
 ```{r setup, include=FALSE, cache = TRUE}
@@ -23,7 +23,15 @@ construcción de ítems.
 
 # Instrucciones: 
 
-A continuación, se les presentarán diversos conceptos. En grupos conformados aleatoriamente por cuatro estudiantes
+1. Formar 16 grupos de 5 personas (1 de 6). 
+
+2. Inscribirse en este [link](https://docs.google.com/spreadsheets/d/1o__9U675LLDpw8gzyniS_gzsl_e_fIxjpSrguUU3Cmw/edit?usp=sharing)
+
+3. Escoger 2 o 3 temas generales para selección posterior de ayudantes.
+
+## Taller:
+
+A continuación, se les presentarán diversos conceptos. En grupos:
 
 a) Escojan tres de los conceptos enlistados al final del documento.
 
