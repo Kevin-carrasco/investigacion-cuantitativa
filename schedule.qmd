@@ -5,7 +5,7 @@ toc: false
 page-layout: full
 ---
 
-Los tres componentes centrales del curso son las clases teóricas, los talleres y los prácticos en R. Las **clases** se realizarán los días **jueves 10:15 a 11:45** en sala **B01** del aulario B. Los **talleres** y **actividades en R** se realizarán el mismo día en el horario de **12:00 a 13:30**.
+Los tres componentes centrales del curso son las clases teóricas, los talleres y los prácticos en R. Las **clases** se realizarán los días **jueves 14:30 a 16:00** en sala **B01** del aulario B. Los **talleres** y **actividades en R** se realizarán el mismo día en el horario de **16:15 a 17:45**.
 
 
 - [**Clases**]() (<i class="fas fa-chalkboard-teacher"></i> ): Lecturas, documentos de presentación y sesiones teóricas

@@ -20,14 +20,14 @@ other2:
 
 course:
   number: "SOC01020-1"
-  semester: "Segundo semestre 2023"
+  semester: "Segundo semestre 2024"
   days: "Jueves"
-  time: "10:15 a 11:45 y 12:00 a 13:30"
-  location: "Aulario B - Sala B01"
-  dates: "Agosto 10 - Diciembre 2023"
-  github: "https://www.github.com/Kevin-carrasco/investigacion-cuantitativa"
+  time: "14:30 a 16:00 y 16:15 a 17:45"
+  location: "Aulario C - Sala C06"
+  dates: "Agosto 29 - Diciembre 2024"
+  github: "https://www.github.com/cursos-metodos-facso/investigacion-cuantitativa"
   url: "https://investigacion-cuantitativa.netlify.app"
-  copyright_year: "2023"
+  copyright_year: "2024"
   slack: ""
 
 university:

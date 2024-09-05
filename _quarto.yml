@@ -40,7 +40,7 @@ website:
 
   navbar:
     pinned: true
-    background: "#27cf1b"
+    background: "#b03721"
     right:
       - syllabus.qmd
       - schedule.qmd
@@ -72,14 +72,14 @@ website:
           contents:
             - text: "01: Taller 1"
               file: assignment/01-taller.qmd
-            - text: "02: Taller 2"
-              file: assignment/02-taller.qmd
-            - text: "03: Taller 3"
-              file: assignment/03-taller.qmd
-            - text: "04: Taller 4"
-              file: assignment/04-taller.qmd
-            - text: "05: Taller 5"
-              file: assignment/05-taller.qmd
+#            - text: "02: Taller 2"
+#              file: assignment/02-taller.qmd
+#            - text: "03: Taller 3"
+#              file: assignment/03-taller.qmd
+#            - text: "04: Taller 4"
+#              file: assignment/04-taller.qmd
+#            - text: "05: Taller 5"
+#              file: assignment/05-taller.qmd
 
     - title: "Prácticos R"
       style: "docked"
@@ -91,12 +91,12 @@ website:
             - practicos/index.qmd
         - section: "Prácticos R"
           contents:
-            - text: "01: Práctico 1"
-              file: practicos/01-content.qmd
-            - text: "02: Práctico 2"
-              file: practicos/02-content.qmd
-            - text: "03: Práctico 3"
-              file: practicos/03-content.qmd
+#            - text: "01: Práctico 1"
+#              file: practicos/01-content.qmd
+#            - text: "02: Práctico 2"
+#              file: practicos/02-content.qmd
+#            - text: "03: Práctico 3"
+#              file: practicos/03-content.qmd
 
 
   page-footer:

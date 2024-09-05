@@ -2,7 +2,7 @@
 title: "Estrategias de investigación cuantitativa"
 subtitle: "Sociología - Facultad de Ciencias Sociales de la Universidad de Chile"
 details: |
-  SOC01020-1 • Segundo semestre 2023<br>Departamento de Sociología FACSO<br>Universidad de Chile
+  SOC01020-1 • Segundo semestre 2024<br>Departamento de Sociología FACSO<br>Universidad de Chile
 sidebar: false
 toc: false
 page-layout: full
