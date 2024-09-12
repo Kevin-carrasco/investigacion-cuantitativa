@@ -1,11 +1,11 @@
 ---
 title: "Taller 2"
-date: "2023-08-24"
+date: "2024-09-12"
 lang: es
 website:
   comments:
     giscus:
-      repo: kevin-carrasco/investigacion-cuantitativa
+      repo: cursos-metodos-facso/investigacion-cuantitativa
 ---
 
 ```{r setup, include=FALSE, cache = TRUE}
@@ -39,7 +39,7 @@ f) Especificar al menos una limitación y una potencialidad del indicador.
 
 g) Presentar dos ejemplos de política pública que podrían utilizar esta información como insumo para su implementación.
 
-h) En una hoja deben especificar el título Taller 2, el nombre de l_s integrantes del equipo, y sus respectivas respuestas. Tendrán hasta las 13:25 para realizar el taller.
+h) En una hoja deben especificar el título Taller 2, el nombre de l_s integrantes del equipo, y sus respectivas respuestas. Tendrán hasta las 17:15 para realizar el taller.
 
 
 ## Indicadores:

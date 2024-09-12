@@ -163,21 +163,33 @@
     "href": "assignment/02-taller.html",
     "title": "Taller 2",
     "section": "",
-    "text": "Reforzar los procedimientos de operacionalización y construcción de indicadores sociales."
+    "text": "Reforzar los procedimientos de operacionalización y construcción de indicadores sociales.",
+    "crumbs": [
+      "Talleres",
+      "02: Taller 2"
+    ]
   },
   {
     "objectID": "assignment/02-taller.html#indicadores",
     "href": "assignment/02-taller.html#indicadores",
     "title": "Taller 2",
     "section": "Indicadores:",
-    "text": "Indicadores:\n\nTasa de ocupación informal: porcentaje de Ocupados Informales respecto al total de los Ocupados del periodo de referencia (INE, 2021). Ello involucra a todas las personas cuyo trabajo no cuenta con características como un contrato escrito, pago a través de liquidaciones de sueldo, entre otros.\nDistribución de población indígena por comuna: porcentaje de habitantes en cada comuna que se identifican como pertenecientes a un pueblo indígena.\nConcentración de jefas de hogar según composición familiar: porcentaje de mujeres que adoptan el rol de jefas de hogar en hogares de distinta composición familiar (unipersonal, nuclear sin hij_s, nuclear con hij_s y monomaternal) respecto del total de jefas de hogar.\nÍndice de hacinamiento: razón entre el número de personas y el número de habitaciones usadas como dormitorios en una vivienda.\nTasa de atención médica ante problema de salud: porcentaje de personas que, habiendo tenido un problema de salud, pudieron recibir atención médica."
+    "text": "Indicadores:\n\nTasa de ocupación informal: porcentaje de Ocupados Informales respecto al total de los Ocupados del periodo de referencia (INE, 2021). Ello involucra a todas las personas cuyo trabajo no cuenta con características como un contrato escrito, pago a través de liquidaciones de sueldo, entre otros.\nDistribución de población indígena por comuna: porcentaje de habitantes en cada comuna que se identifican como pertenecientes a un pueblo indígena.\nConcentración de jefas de hogar según composición familiar: porcentaje de mujeres que adoptan el rol de jefas de hogar en hogares de distinta composición familiar (unipersonal, nuclear sin hij_s, nuclear con hij_s y monomaternal) respecto del total de jefas de hogar.\nÍndice de hacinamiento: razón entre el número de personas y el número de habitaciones usadas como dormitorios en una vivienda.\nTasa de atención médica ante problema de salud: porcentaje de personas que, habiendo tenido un problema de salud, pudieron recibir atención médica.",
+    "crumbs": [
+      "Talleres",
+      "02: Taller 2"
+    ]
   },
   {
     "objectID": "assignment/02-taller.html#ejemplo-de-trabajo",
     "href": "assignment/02-taller.html#ejemplo-de-trabajo",
     "title": "Taller 2",
     "section": "Ejemplo de trabajo",
-    "text": "Ejemplo de trabajo\nIndicador: Tasa de Inflación\nDefinición: Variación porcentual de un Índice de Precios de Consumo (IPC) respecto del periodo anterior. El IPC es un indicador que mide la variación media de bienes y servicios durante un período de tiempo determinado en una economía en específico.\nVariables necesarias: Precios de los bienes y servicios incluidos en la estimación del IPC para el periodo por analizar y el periodo anterior.\nFormalización:\n\\[TI = \\frac{IPC1-IPC0}{IPC0} * 100\\]\ndonde:\nTI = Tasa de Inflación,\nIPC1 = IPC del periodo por analizar\nIPC0 = IPC del periodo anterior\nPosibles valores: (- ∞, +∞) medidos en porcentaje (%).\nInterpretación: un valor positivo indica un aumento medio relativo del conjunto de precios de los bienes y servicios incluidos en la estimación del IPC, mientras que un valor negativo indica una disminución media relativa del conjunto de precios de los bienes y servicios incluidos en la estimación del IPC. Por ejemplo, una tasa de inflación de un 3,4% indica que, en promedio, el conjunto de los precios de bienes y servicios incluidos en la estimación del IPC aumentó en un 3.4% respecto del periodo anterior. Así, si un producto X tenía un precio de $1.000 en el periodo anterior, su precio en el periodo analizado debiese aproximarse a 1.000*1.034 = $1.034.\nLimitaciones: La definición de bienes y servicios incluidos en la estimación del IPC puede estar sujeta a lo que el gobierno o l_s funcionari_s del Estado consideren indispensable en los gastos mensuales de un hogar, dejando fuera algunos que pudiesen tener igual relevancia.\nPotencialidades: Permite medir de forma precisa los requerimientos de un hogar promedio mensual en relación a sus gastos fundamentales, por lo que hace posible conocer el estado de una economía en lo que respecta a su consumo.\nEj. de PP: Transferencias directas a hogares de bajos ingresos, para facilitar la satisfacción de necesidades básicas. Subvención gubernamental del precio de los productos con mayor aumento de precios entre ambos periodos."
+    "text": "Ejemplo de trabajo\nIndicador: Tasa de Inflación\nDefinición: Variación porcentual de un Índice de Precios de Consumo (IPC) respecto del periodo anterior. El IPC es un indicador que mide la variación media de bienes y servicios durante un período de tiempo determinado en una economía en específico.\nVariables necesarias: Precios de los bienes y servicios incluidos en la estimación del IPC para el periodo por analizar y el periodo anterior.\nFormalización:\n\\[TI = \\frac{IPC1-IPC0}{IPC0} * 100\\]\ndonde:\nTI = Tasa de Inflación,\nIPC1 = IPC del periodo por analizar\nIPC0 = IPC del periodo anterior\nPosibles valores: (- ∞, +∞) medidos en porcentaje (%).\nInterpretación: un valor positivo indica un aumento medio relativo del conjunto de precios de los bienes y servicios incluidos en la estimación del IPC, mientras que un valor negativo indica una disminución media relativa del conjunto de precios de los bienes y servicios incluidos en la estimación del IPC. Por ejemplo, una tasa de inflación de un 3,4% indica que, en promedio, el conjunto de los precios de bienes y servicios incluidos en la estimación del IPC aumentó en un 3.4% respecto del periodo anterior. Así, si un producto X tenía un precio de $1.000 en el periodo anterior, su precio en el periodo analizado debiese aproximarse a 1.000*1.034 = $1.034.\nLimitaciones: La definición de bienes y servicios incluidos en la estimación del IPC puede estar sujeta a lo que el gobierno o l_s funcionari_s del Estado consideren indispensable en los gastos mensuales de un hogar, dejando fuera algunos que pudiesen tener igual relevancia.\nPotencialidades: Permite medir de forma precisa los requerimientos de un hogar promedio mensual en relación a sus gastos fundamentales, por lo que hace posible conocer el estado de una economía en lo que respecta a su consumo.\nEj. de PP: Transferencias directas a hogares de bajos ingresos, para facilitar la satisfacción de necesidades básicas. Subvención gubernamental del precio de los productos con mayor aumento de precios entre ambos periodos.",
+    "crumbs": [
+      "Talleres",
+      "02: Taller 2"
+    ]
   },
   {
     "objectID": "assignment/01-taller.html",
