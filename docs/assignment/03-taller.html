@@ -112,7 +112,7 @@ window.Quarto = {
 <meta name="twitter:card" content="summary_large_image">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-sidebar docked nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -138,7 +138,7 @@ window.Quarto = {
 <span class="menu-text">Planificación</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="../assignment/index.html"> 
+    <a class="nav-link active" href="../assignment/index.html" aria-current="page"> 
 <span class="menu-text">Talleres</span></a>
   </li>  
   <li class="nav-item">
@@ -160,10 +160,73 @@ window.Quarto = {
 </div>
       </div> <!-- /container-fluid -->
     </nav>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="../assignment/01-taller.html">Talleres</a></li><li class="breadcrumb-item"><a href="../assignment/03-taller.html">03: Taller 3</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+    </div>
+  </nav>
 </header>
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true">
+ <span class="menu-text">Información general</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Talleres</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true">
+ <span class="menu-text">Talleres</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" aria-expanded="true" aria-label="Alternar sección">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/01-taller.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">01: Taller 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/02-taller.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">02: Taller 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="../assignment/03-taller.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">03: Taller 3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
@@ -186,7 +249,7 @@ window.Quarto = {
 <h1 class="title display-7">Taller 3</h1>
 
 <div class="date-block bg-assignment text-white p-2">
-  <p class="date">Due by 11:59 PM on jueves, 21 de septiembre de 2023</p>
+  <p class="date">Due by 11:59 PM on jueves, 26 de septiembre de 2024</p>
 </div>
 </header>
 
@@ -200,14 +263,14 @@ window.Quarto = {
 <p>A continuación, se les presentarán diversos constructos. En sus grupos de trabajo, ustedes deben:</p>
 <ol type="a">
 <li><p>Escoger uno de los constructos enlistados.</p></li>
-<li><p>Definir la unidad de análisis para cada uno (sujetos/individuos, países, etc.).</p></li>
+<li><p>Definir la unidad de análisis para cada uno (sujetos/individuos, comunas, países, etc.).</p></li>
 <li><p>Para cada uno de ellos, definir dimensiones (al menos dos) e indicadores (al menos tres por cada dimensión).</p></li>
 <li><p>Para el caso de los indicadores, deben presentar el rango de valores posibles e identificar su nivel de medición.</p></li>
 <li><p>Elaborar un diagrama que refleje la operacionalización de cada constructo, dando cuenta de sus dimensiones e indicadores.</p></li>
 <li><p>A partir de los indicadores definidos, construir un índice sintético no ponderado que permita medir el constructo multidimensionalmente. Para ello, deben especificar la fórmula en base a la cual se estiman los valores del índice.</p></li>
 <li><p>Presentar los posibles valores que puede adoptar el índice construido, así como su nivel de medición. Señalar valores mínimo y máximo teórico, y proveer una breve interpretación de los posibles valores adoptados. En caso de estandarizar los valores, justificar tal decisión y señalar el rango de valores estandarizados.</p></li>
 <li><p>Reflexionar en torno a la validez del constructo ¿En qué medida el constructo permite medir el concepto? ¿Qué elementos están quedando fuera de la medición?</p></li>
-<li><p>En una hoja deben especificar el título Taller 3, el nombre de l_s integrantes del equipo que están presentes en el taller, y sus respectivas respuestas. Tendrán hasta las 13:25 para realizar el taller.</p></li>
+<li><p>Deben especificar el título Taller 3, el nombre de l_s integrantes del equipo que están presentes en el taller, y sus respectivas respuestas. Tendrán hasta las 17:15 para realizar el taller.</p></li>
 </ol>
 <section id="constructos" class="level2">
 <h2 class="anchored" data-anchor-id="constructos">Constructos:</h2>

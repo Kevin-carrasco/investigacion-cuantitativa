@@ -74,8 +74,8 @@ website:
               file: assignment/01-taller.qmd
             - text: "02: Taller 2"
               file: assignment/02-taller.qmd
-#            - text: "03: Taller 3"
-#              file: assignment/03-taller.qmd
+            - text: "03: Taller 3"
+              file: assignment/03-taller.qmd
 #            - text: "04: Taller 4"
 #              file: assignment/04-taller.qmd
 #            - text: "05: Taller 5"

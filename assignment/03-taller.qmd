@@ -1,11 +1,11 @@
 ---
 title: "Taller 3"
-date: "2023-09-21"
+date: "2024-09-26"
 lang: es
 website:
   comments:
     giscus:
-      repo: kevin-carrasco/investigacion-cuantitativa
+      repo: cursos-metodos-facso/investigacion-cuantitativa
 ---
 
 ```{r setup, include=FALSE, cache = TRUE}
@@ -28,7 +28,7 @@ A continuación, se les presentarán diversos constructos. En sus grupos de trab
 
 a) Escoger uno de los constructos enlistados.
 
-b) Definir la unidad de análisis para cada uno (sujetos/individuos, países, etc.). 
+b) Definir la unidad de análisis para cada uno (sujetos/individuos, comunas, países, etc.). 
 
 c) Para cada uno de ellos, definir dimensiones (al menos dos) e indicadores (al menos tres por cada dimensión). 
 
@@ -42,7 +42,7 @@ g) Presentar los posibles valores que puede adoptar el índice construido, así 
 
 h) Reflexionar en torno a la validez del constructo ¿En qué medida el constructo permite medir el concepto? ¿Qué elementos están quedando fuera de la medición? 
 
-i) En una hoja deben especificar el título Taller 3, el nombre de l_s integrantes del equipo que están presentes en el taller, y sus respectivas respuestas. Tendrán hasta las 13:25 para realizar el taller.
+i) Deben especificar el título Taller 3, el nombre de l_s integrantes del equipo que están presentes en el taller, y sus respectivas respuestas. Tendrán hasta las 17:15 para realizar el taller.
 
 
 ## Constructos:
