@@ -1,6 +1,6 @@
 ---
 title: "Práctico R 1. Construcción de índices"
-date: "2023-10-05"
+date: "2024-10-10"
 lang: es
 website:
   comments:
