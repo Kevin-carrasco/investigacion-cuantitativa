@@ -1,11 +1,11 @@
 ---
 title: "Taller 4"
-date: "2023-10-12"
+date: "2024-10-17"
 lang: es
 website:
   comments:
     giscus:
-      repo: kevin-carrasco/investigacion-cuantitativa
+      repo: cursos-metodos-facso/investigacion-cuantitativa
 ---
 
 
@@ -27,7 +27,7 @@ c) Para cada escala, presentar dos ejemplos de investigaciones empíricas que, e
 
 d) Para cada escala ¿qué otros indicadores podrían incluirse en su construcción? (señalar al menos dos por escala). 
 
-e) En una hoja deben especificar el título Taller 4, el nombre de l_s integrantes del equipo que están presentes en el taller, y sus respectivas respuestas. Tendrán hasta las 13:25 para realizar el taller.
+e) En un documento deben especificar el título Taller 4, el nombre de l_s integrantes del equipo que están presentes en el taller, y sus respectivas respuestas. Tendrán hasta las 17:15 para realizar el taller.
 
 
 ## Constructos:
