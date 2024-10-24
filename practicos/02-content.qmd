@@ -19,9 +19,9 @@ opts_chunk$set(warning=FALSE,
 
 # Presentación
 
-Para el taller práctico de hoy utilizaremos la base de datos del estudio de **Martin et al. (2003)**. *Individual differences in uses of humor and and their relation to psychological well-being. Development of the Humor Styles Questionnaire*. 
+Para el taller práctico de hoy utilizaremos la base de datos del Estudio Longitudinal Social de Chile, realizado por el Centro de estudios del conflicto y la cohesión social [COES](https://coes.cl/).
 
-En este artículo se describe el desarrollo y la validación inicial del Cuestionario de Estilos de Humor, que evalúa cuatro dimensiones relacionadas con las diferencias individuales en el uso del humor. Estas son: usos relativamente benignos del humor para mejorar uno mismo (Autofortalecedor) y para mejorar las relaciones con otros (Afiliativo), uso del humor para mejorar uno mismo a expensas de los demás (Agresivo) y uso del humor para mejorar las relaciones a expensas de uno mismo (Autodestructivo).
+El Estudio Longitudinal Social del Chile [ELSOC](https://coes.cl/encuesta-panel/), único en Chile y América Latina, consiste en encuestar a casi 3.000 chilenos, anualmente, a lo largo de una década. ELSOC ha sido diseñado para evaluar la manera cómo piensan, sienten y se comportan los chilenos en torno a un conjunto de temas referidos al conflicto y la cohesión social en Chile. La población objetivo son hombres y mujeres entre 15 y 75 años de edad, tiene una representación de la población nacional urbana, donde se obtuvo una muestra original de **2927** casos en el año 2016 y mantiene **1728** en 2022, además de una muestra de refresco en 2018.
 
 
 # Objetivo general
@@ -43,138 +43,162 @@ pacman::p_load(tidyverse, # conjunto de paquetes, sobre todo dplyr y ggplot2
                car,       # para recodificar
                psych,     # para Alfa de Chronbach
                sjmisc,    # para descriptivos
-               remotes,   # para instalar paquete jogRu
-               readr)     # para cargararchivo csv
-
+               sjPlot,     # para gráficos
+               sjlabelled) # etiquetas
 options(scipen = 999) # para desactivar notacion cientifica
 rm(list = ls())       # para limpiar el entorno de trabajo
 ```
 
-Además, instalaremos la librería `jogRu` desde github, que nos permitirá calcular el alfa de Chronbach para variables ordinales.
-
-```{r, message=FALSE, warning=FALSE}
-remotes::install_github("jogrue/jogRu", force = T)
-```
-
-::: callout-note
-Si pregunta *These packages have more recent versions available. It is recommended to update all of them.Which would you like to update?* SIEMPRE PONER 3: None.
-:::
-
-
 ## Datos y variables
 
-Como mencionamos, utilizaremos la base de datos del estudio Martin et al. (2003). *Individual differences in uses of humor and and their relation to psychological well-being. Development of the Humor Styles Questionnaire*.
+Para el ejercicio de escalas, utilizaremos la base de datos de ELSOC, específicamente el módulo de **Salud y Bienestar**. De este módulo utilizaremos un concepto en particular llamado *Estado de ánimo: sintomatología depresiva* con los ítems:
 
-En estos datos podemos ver una serie de ítems que corresponden a diferentes dimensiones de la escala, donde cada ítem tiene valores entre 1 y 5. De acuerdo con el paper, los ítems se ordenan de esta forma de acuerdo con los tipos de humor:
+- Frecuencia: Poco interés o alegría
+- Frecuencia: Decaimiento, pesadez o desesperanza
+- Frecuencia: Dificultad para dormir o exceso de sueño
+- Frecuencia: Cansancio o sensación de falta de energía
+- Frecuencia: Apetito disminuido o aumentado
+- Frecuencia: Dificultad para concentrarse
+- Frecuencia: Mala opinión de sí mismo
+- Frecuencia: Enlentecimiento físico
+- Frecuencia: Pensamiento de muerte o dañarse
 
-- afiliativo       : Q1, Q5, Q9 , Q13, Q17, Q21, Q25, Q29
-- autofortalecedor : Q2, Q6, Q10, Q14, Q18, Q22, Q26, Q30
-- agresivo         : Q3, Q7, Q11, Q15, Q19, Q23, Q27, Q31
-- autodestructivo  : Q4, Q8, Q12, Q16, Q20, Q24, Q28, Q32
-
+Esta escala tiene solamente una dimensión, por lo que no es necesario crear objetos que contengan a cada dimensión
 
 ### Cargar base de datos
 
 ```{r }
-data <- read.csv(url("https://github.com/cursos-metodos-facso/investigacion-cuantitativa/raw/main/files/data/data.csv"))
+load(url("https://dataverse.harvard.edu/api/access/datafile/7245118")) #Cargar base de datos
 ```
 
+## Filtrar base de datos
 
-### Visualización de datos
+Filtraremos la base de datos para quedarnos con las observaciones correspondientes solamente a la ola 1, y además seleccionaremos los ítems de interés.
 
 ```{r}
+data <- elsoc_long_2016_2022.2 %>% filter(ola==1) %>%  # seleccionamos solo los casos de la ola 1
+  select(poco_interes=s11_01,
+         decaimiento=s11_02,
+         dificultad_dormir=s11_03,
+         cansancio=s11_04,
+         apetito_disminuido=s11_05,
+         dificultad_concentrarse=s11_06,
+         mala_opinion=s11_07,
+         enlentecimiento=s11_08,
+         pensamiento_muerte=s11_09
+         ) # items sintomatologia depresiva
+
 head(data)
-str(data)
+table(data$poco_interes)
+table(data$decaimiento)
+table(data$dificultad_dormir)
 ```
 
-
-## Procesamiento
-
+Estos ítems cuentan con las mismas categorías de respuesta: (1) Nunca, (2) Algunos dias, (3) Mas de la mitad de los dias, (4) Casi todos los dias, y (5) Todos los dias. Además de los valores codificados como -888 y -999.
 
 ### Recodificar
 
-Para que todas las escalas queden en el mismo orden jerárquico, es necesario invertir algunos ítems.
-
-```{r, message=FALSE, warning=FALSE}
-data = data %>% 
-  mutate_at(vars(Q1, Q9, Q17, Q25, Q29, # afiliativo
-                 Q22,                   # autofortalecedor
-                 Q7, Q15, Q23, Q31,     # agresivo
-                 Q16), ~(6-.)) %>%      # autodestructivo
-  mutate(gender = car::recode(.$gender, "0 = NA;
-                              1 = 'Hombre'; 2 = 'Mujer'; 3 = 'Otro'")) %>% 
-  mutate_at(vars(1:32), ~(ifelse(. < 1 | . > 5, NA, .))) %>% 
-  na.omit()
-```
-
-
-### Crear objetos para dimensiones de la escala
-
-Creamos cuatro objetos que contienen los ítems de cada dimensión de la escala.
+Recodificamos los valores -888 y -999 en NA y eliminamos los NAs.
 
 ```{r}
-afiliativo       <- data %>% select(Q1, Q5, Q9 , Q13, Q17, Q21, Q25, Q29)
-autofortalecedor <- data %>% select(Q2, Q6, Q10, Q14, Q18, Q22, Q26, Q30)
-agresivo         <- data %>% select(Q3, Q7, Q11, Q15, Q19, Q23, Q27, Q31)
-autodestructivo  <- data %>% select(Q4, Q8, Q12, Q16, Q20, Q24, Q28, Q32)
+data$poco_interes <- car::recode(data$poco_interes, "c(-999,-888)=NA")
+data$decaimiento <- car::recode(data$decaimiento, "c(-999,-888)=NA")
+data$dificultad_dormir <- car::recode(data$dificultad_dormir, "c(-999,-888)=NA")
+data$cansancio <- car::recode(data$cansancio, "c(-999,-888)=NA")
+data$apetito_disminuido <- car::recode(data$apetito_disminuido, "c(-999,-888)=NA")
+data$dificultad_concentrarse <- car::recode(data$dificultad_concentrarse, "c(-999,-888)=NA")
+data$mala_opinion <- car::recode(data$mala_opinion, "c(-999,-888)=NA")
+data$enlentecimiento <- car::recode(data$enlentecimiento, "c(-999,-888)=NA")
+data$pensamiento_muerte <- car::recode(data$pensamiento_muerte, "c(-999,-888)=NA")
+
+data <- data %>% mutate(across(everything(), ~ . - 1))
+
+table(data$poco_interes)
+
+data$poco_interes <- set_labels(data$poco_interes,
+            labels=c( "Nunca"=0,
+                      "Algunos dias"=1,
+                      "Mas de la mitad de los dias"=2,
+                      "Casi todos los dias"=3,
+                      "Todos los dias"=4))
+
+data$decaimiento <- set_labels(data$decaimiento,
+            labels=c( "Nunca"=0,
+                      "Algunos dias"=1,
+                      "Mas de la mitad de los dias"=2,
+                      "Casi todos los dias"=3,
+                      "Todos los dias"=4))
+
+data$dificultad_dormir <- set_labels(data$dificultad_dormir,
+            labels=c( "Nunca"=0,
+                      "Algunos dias"=1,
+                      "Mas de la mitad de los dias"=2,
+                      "Casi todos los dias"=3,
+                      "Todos los dias"=4))
+
+data$cansancio <- set_labels(data$cansancio,
+            labels=c( "Nunca"=0,
+                      "Algunos dias"=1,
+                      "Mas de la mitad de los dias"=2,
+                      "Casi todos los dias"=3,
+                      "Todos los dias"=4))
+data$apetito_disminuido <- set_labels(data$apetito_disminuido,
+            labels=c( "Nunca"=0,
+                      "Algunos dias"=1,
+                      "Mas de la mitad de los dias"=2,
+                      "Casi todos los dias"=3,
+                      "Todos los dias"=4))
+data$dificultad_concentrarse <- set_labels(data$dificultad_concentrarse,
+            labels=c( "Nunca"=0,
+                      "Algunos dias"=1,
+                      "Mas de la mitad de los dias"=2,
+                      "Casi todos los dias"=3,
+                      "Todos los dias"=4))
+data$mala_opinion <- set_labels(data$mala_opinion,
+            labels=c( "Nunca"=0,
+                      "Algunos dias"=1,
+                      "Mas de la mitad de los dias"=2,
+                      "Casi todos los dias"=3,
+                      "Todos los dias"=4))
+data$enlentecimiento <- set_labels(data$enlentecimiento,
+            labels=c( "Nunca"=0,
+                      "Algunos dias"=1,
+                      "Mas de la mitad de los dias"=2,
+                      "Casi todos los dias"=3,
+                      "Todos los dias"=4))
+data$pensamiento_muerte <- set_labels(data$pensamiento_muerte,
+            labels=c( "Nunca"=0,
+                      "Algunos dias"=1,
+                      "Mas de la mitad de los dias"=2,
+                      "Casi todos los dias"=3,
+                      "Todos los dias"=4))
 ```
 
-
 ## Explorar datos
-
 
 ### Descriptivos
 
 ```{r}
-# Medias para cada dimensión
-data %>% 
-  summarise(Afiliativo = mean(affiliative),
-            Autofortalecedor = mean(selfenhancing),
-            Agresivo = mean(agressive),
-            Autodestructivo = mean(selfdefeating))
-
-# Frecuencias por género
-table(data$gender)
-
-# Medias para cada dimensión por género
-data %>% group_by(gender) %>% 
-  summarise(Afiliativo = mean(affiliative),
-            Autofortalecedor = mean(selfenhancing),
-            Agresivo = mean(agressive),
-            Autodestructivo = mean(selfdefeating))
+plot_stackfrq(data) + theme(legend.position="bottom")
 ```
-
-
 
 ## Análisis
 
 ### Estimar correlación
 
-Se debe estimar la correlación de cada dimensión de la escala por separado.
+Dado que la escala tiene solamente una dimensión, estimaremos la correlación de toda la escala.
 
 ```{r}
-# Afiliativo
-cor(afiliativo)
-
-# Autofortalecedor
-cor(autofortalecedor)
-
-# Agresivo
-cor(agresivo)
-
-# Autodestructivo
-cor(autodestructivo)
+tab_corr(data, triangle = "lower")
 ```
 
 Podemos observar que todas las correlaciones son positivas, por lo que no quedaron ítems invertidos.
 
+## Estimar consistencia interna
 
-### Estimar consistencia interna
+### Alfa de Chronbach
 
-
-#### Alfa de Chronbach
-
-Primero, estimaremos la consistencia interna de cada dimensión con un **alfa de Chronbach**. El alfa de Chronbach, es un estadístico que permite estimar la fiabilidad de un test por consistencia interna. Su ventaja es que es fácil de estimar. Sus desventajas, sin embargo, son que:
+Primero, estimaremos la consistencia interna con un **alfa de Chronbach**. El alfa de Chronbach, es un estadístico que permite estimar la fiabilidad de un test por consistencia interna. Su ventaja es que es fácil de estimar. Sus desventajas, sin embargo, son que:
 
 - Puede aumentarse artificialmente incorporando ítems parecidos;
 - Asume que el constructo es unidimensional;
@@ -198,28 +222,156 @@ Asimismo, esperamos que la correlación de cada ítem respecto del total sea al 
 
 
 ```{r}
-psych::alpha(afiliativo)
-psych::alpha(autofortalecedor)
-psych::alpha(agresivo)
-psych::alpha(autodestructivo)
+psych::alpha(data)
+```
 
-# Para toda la escala 
-psych::alpha(data %>% select(1:32))
+## Creación de escala
+
+```{r}
+data <- cbind(data, 
+              "sintomatologia_depresiva"=rowSums(data, 
+              na.rm=TRUE))
+
+summary(data$sintomatologia_depresiva)
 ```
 
 
-#### Alfa Ordinal
+# Otro ejemplo
 
-Como se señaló, el alfa de Chronbach está diseñado para variables continuas. Por ello, podemos calcular el alfa ordinal para las puntuaciones de cada ítem. Para esto, utilizaremos la función `ordinal_alpha()`de `jogRu`, que estima el alfa ordinal a partir de correlación policórica (según lo propuesto por Zumbo et al.(2007)). 
+## Datos y variables
+
+Utilizaremos específicamente el módulo de **Ciudadanía**. De este módulo utilizaremos un concepto en particular llamado *Confianza en instituciones* con los ítems:
+
+- Grado de confianza: El Gobierno
+
+- Grado de confianza: Los Partidos políticos
+
+- Grado de confianza: Carabineros
+
+- Grado de confianza: Los sindicatos
+
+- Grado de confianza: Las empresas privadas
+
+- Grado de confianza: El congreso nacional
+
+- Grado de confianza: El presidente de la república
+
+
+La idea general es ver si esque todas estas variables miden algún tipo de *confianza*.
+
+## Filtrar base de datos
+
+Filtraremos la base de datos para quedarnos con las observaciones correspondientes solamente a la ola 4, y además seleccionaremos los ítems de interés.
 
 ```{r}
-jogRu::ordinal_alpha(afiliativo)
-jogRu::ordinal_alpha(autofortalecedor)
-jogRu::ordinal_alpha(agresivo)
-jogRu::ordinal_alpha(autodestructivo)
+data <- elsoc_long_2016_2022.2 %>% filter(ola==4) %>%  # seleccionamos solo los casos de la ola 1
+  select(conf_gob = c05_01,
+         conf_part = c05_02,
+         conf_carab = c05_03,
+         conf_sind = c05_04,
+         conf_empre = c05_06,
+         conf_cong = c05_07,
+         conf_pres = c05_08,
+         )
 
-# Para toda la escala 
-jogRu::ordinal_alpha(data %>% select(1:32))
+```
+
+Estos ítems cuentan con las mismas categorías de respuesta: (1) Nada, a (5) Mucho. Además de los valores codificados como -888 y -999.
+
+### Recodificar
+
+Recodificamos los valores -888 y -999 en NA y eliminamos los NAs.
+
+```{r, message=FALSE, warning=FALSE}
+data$conf_gob <- car::recode(data$conf_gob, "c(-999,-888)=NA")
+data$conf_part <- car::recode(data$conf_part, "c(-999,-888)=NA")
+data$conf_carab <- car::recode(data$conf_carab, "c(-999,-888)=NA")
+data$conf_sind <- car::recode(data$conf_sind, "c(-999,-888)=NA")
+data$conf_empre <- car::recode(data$conf_empre, "c(-999,-888)=NA")
+data$conf_cong <- car::recode(data$conf_cong, "c(-999,-888)=NA")
+data$conf_pres <- car::recode(data$conf_pres, "c(-999,-888)=NA")
+
+
+data$conf_gob <- set_labels(data$conf_gob,
+            labels=c( "Nada"=1,
+                      "Poca"=2,
+                      "Algo"=3,
+                      "Bastante"=4,
+                      "Mucha"=5))
+
+data$conf_part <- set_labels(data$conf_part,
+            labels=c( "Nada"=1,
+                      "Poca"=2,
+                      "Algo"=3,
+                      "Bastante"=4,
+                      "Mucha"=5))
+
+data$conf_carab <- set_labels(data$conf_carab,
+            labels=c( "Nada"=1,
+                      "Poca"=2,
+                      "Algo"=3,
+                      "Bastante"=4,
+                      "Mucha"=5))
+
+data$conf_sind <- set_labels(data$conf_sind,
+            labels=c( "Nada"=1,
+                      "Poca"=2,
+                      "Algo"=3,
+                      "Bastante"=4,
+                      "Mucha"=5))
+data$conf_empre <- set_labels(data$conf_empre,
+            labels=c( "Nada"=1,
+                      "Poca"=2,
+                      "Algo"=3,
+                      "Bastante"=4,
+                      "Mucha"=5))
+data$conf_cong <- set_labels(data$conf_cong,
+            labels=c( "Nada"=1,
+                      "Poca"=2,
+                      "Algo"=3,
+                      "Bastante"=4,
+                      "Mucha"=5))
+data$conf_pres <- set_labels(data$conf_pres,
+            labels=c( "Nada"=1,
+                      "Poca"=2,
+                      "Algo"=3,
+                      "Bastante"=4,
+                      "Mucha"=5))
+```
+
+## Análisis
+
+```{r}
+plot_stackfrq(data) + theme(legend.position="bottom")
+```
+
+
+### Estimar correlación
+
+```{r}
+tab_corr(data, triangle = "lower")
+```
+
+Podemos observar que todas las correlaciones son positivas, por lo que no quedaron ítems invertidos.
+
+```{r}
+psych::alpha(data)
+```
+
+Si sacamos conf_sind el alpha sube a 0.8
+
+```{r}
+data %>% select(conf_gob:conf_carab, conf_empre:conf_pres) %>% psych::alpha()
+```
+
+
+```{r}
+data <- cbind(data, 
+              "conf_inst"=rowMeans(data %>%
+              dplyr::select(conf_gob:conf_carab, conf_empre:conf_pres), 
+              na.rm=TRUE))
+
+summary(data$conf_inst)
 ```
 
 

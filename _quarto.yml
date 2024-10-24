@@ -93,8 +93,8 @@ website:
           contents:
            - text: "01: Práctico 1"
              file: practicos/01-content.qmd
-#            - text: "02: Práctico 2"
-#              file: practicos/02-content.qmd
+           - text: "02: Práctico 2"
+             file: practicos/02-content.qmd
 #            - text: "03: Práctico 3"
 #              file: practicos/03-content.qmd
 
