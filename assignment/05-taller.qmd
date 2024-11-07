@@ -1,6 +1,6 @@
 ---
 title: "Taller 5"
-date: "2023-11-09"
+date: "2024-11-07"
 lang: es
 website:
   comments:
@@ -45,4 +45,4 @@ En sus grupos de trabajo, ustedes deben:
 
   c) Principales variables a considerar.
   
-5. En una hoja deben especificar el título Taller 5, el nombre de l_s integrantes del equipo que están presentes en el taller, y sus respectivas respuestas. Tendrán hasta las 13:25 para realizar el taller.
+5. En una hoja deben especificar el título Taller 5, el nombre de l_s integrantes del equipo que están presentes en el taller, y sus respectivas respuestas. Tendrán hasta las 17:15 para realizar el taller.
